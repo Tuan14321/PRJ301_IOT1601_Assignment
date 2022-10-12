@@ -3,7 +3,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : Oct 12, 2022, 11:11:06 PM
+    Created on : Oct 13, 2022, 1:45:12 AM
     Author     : tuann
 */
 *{
@@ -21,6 +21,8 @@ a{
 
 th{
     background-color: rgb(107, 144, 218);
+    text-transform: uppercase;
+    padding: 4px;
 }
 .container{
     margin: 20px 10%;
@@ -55,18 +57,12 @@ td{
     padding: 5px;
     border-radius: 3px;
 }
-.notyet{
+img{
+    width: 150px;
+}
+.status-a{
     color: red;
 }
-.timeslot{
-    font-size: 13px;
-    background-color: rgb(113, 194, 118);
-    color: white;
-    padding: 2px;
-    border-radius: 3px;
+.status-p{
+    color: green;
 }
-.view{
-    text-align: center;
-    margin: 20px 0px;
-}
-

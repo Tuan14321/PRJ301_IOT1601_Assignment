@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Time Table</title>
         <link rel="stylesheet" href="css/timetable.css"/>
     </head>
     <body>
@@ -23,7 +23,10 @@
             <div class="header">
                 <div class="left-header">
                     <a  href="#">Home</a> |
-                    <a>View Schedule</a>
+                    <a>View Schedule</a> |
+                    <a href="attend">Timetable</a> |
+                    <a href="course">Course</a> |
+                    <a href="attend">Attend</a>
                 </div>
                 <div class="right-header">
                     <a href="#">tuantvhe151027</a> |
@@ -32,11 +35,20 @@
                 </div>
             </div>
 
+            <div class="view">
+                <div> Campus: <select>
+                        <option>Fu-HL</option>
+                        <option>Fu-HCM</option>
+                        <option>Fu-CT</option>
+                    </select><br>
+                </div>
+                <div>
+                    Lecture: <input type="text"> <button type="button">View</button>
+                </div>
+            </div>
+
+
             <div>
-                <!--                Student ID: <input name="Id" type="text"/><br>
-                                From: <input type="date" name="from"/>           
-                                To: <input type="date" name="to"/>    <br>
-                                <input type="Submit" value="Search"/>-->
                 <table>
                     <thead>
                         <tr>
@@ -87,7 +99,7 @@
                             <td>Slot 1</td>
                             <td>-</td>
                             <td>
-                                <a href="#">
+                                <a href="course">
                                     PRJ301
                                 </a> <br>
                                 at DE-416 <br>

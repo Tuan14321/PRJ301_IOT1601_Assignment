@@ -46,23 +46,27 @@ td{
     background-color: rgb(113, 194, 118);
     color: white;
     padding: 5px;
-    border-radius: 3px; 
+    border-radius: 3px;
 }
 .right-header .campus{
-        font-size: 10px;
+    font-size: 10px;
     background-color: rgb(113, 194, 118);
     color: white;
     padding: 5px;
-    border-radius: 3px; 
+    border-radius: 3px;
 }
 .notyet{
     color: red;
 }
 .timeslot{
     font-size: 13px;
-        background-color: rgb(113, 194, 118);
+    background-color: rgb(113, 194, 118);
     color: white;
-     padding: 2px;
-    border-radius: 3px; 
+    padding: 2px;
+    border-radius: 3px;
+}
+.view{
+    text-align: center;
+    margin: 20px 0px;
 }
 
