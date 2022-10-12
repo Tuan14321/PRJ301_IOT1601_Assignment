@@ -1,0 +1,68 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 12, 2022, 11:11:06 PM
+    Author     : tuann
+*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: sans-serif;
+    font-weight: 100;
+}
+a{
+    text-decoration: none;
+}
+
+th{
+    background-color: rgb(107, 144, 218);
+}
+.container{
+    margin: 20px 10%;
+}
+td{
+    width: 12%;
+}
+.header{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(245, 245, 245);
+    padding: 10px 0px;
+}
+.left-header{
+    margin-left: 20px;
+}
+.right-header{
+    margin-right: 30px;
+}
+.right-header a{
+    font-size: 10px;
+    background-color: rgb(113, 194, 118);
+    color: white;
+    padding: 5px;
+    border-radius: 3px; 
+}
+.right-header .campus{
+        font-size: 10px;
+    background-color: rgb(113, 194, 118);
+    color: white;
+    padding: 5px;
+    border-radius: 3px; 
+}
+.notyet{
+    color: red;
+}
+.timeslot{
+    font-size: 13px;
+        background-color: rgb(113, 194, 118);
+    color: white;
+     padding: 2px;
+    border-radius: 3px; 
+}
+
