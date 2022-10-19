@@ -24,7 +24,7 @@
                 <div class="left-header">
                     <a  href="#">Home</a> |
                     <a>View Schedule</a> |
-                    <a href="attend">Timetable</a> |
+                    <a href="timetable">Timetable</a> |
                     <a href="course">Course</a> |
                     <a href="attend">Attend</a>
                 </div>
