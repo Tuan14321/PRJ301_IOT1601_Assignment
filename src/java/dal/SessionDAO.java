@@ -99,7 +99,6 @@ public class SessionDAO extends DBContext<Session> {
                     ses.setDate(rs.getDate("date"));
                     ses.setIndex(rs.getInt("index"));
                     ses.setAttanded(rs.getBoolean("attanded"));
-
                 }
 
                 Student s = new Student();
@@ -112,6 +111,10 @@ public class SessionDAO extends DBContext<Session> {
                 a.setPresent(rs.getBoolean("present"));
                 a.setDescription(rs.getString("description"));
                 ses.getAtts().add(a);
+                
+                Group g = new Group();
+                g.setId(rs.getInt("gid"));
+                g.setName(rs.getString("gname"));
             }
             return ses;
         } catch (SQLException ex) {

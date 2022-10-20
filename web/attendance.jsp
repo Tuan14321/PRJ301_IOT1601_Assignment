@@ -4,6 +4,7 @@
     Author     : tuann
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -44,7 +45,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th>No.</th>
                             <th>Group</th>
                             <th>Code</th>
                             <th>Name</th>
@@ -56,14 +57,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
+                        <c:forEach items="${requestScope.ses.atts}" var="a" varStatus="loop">
+                            <tr>
+                                <td>${loop.index + 1}</td>
+                                <td>${a.group.name}</td>
+                                <td>${a.student.id}</td>
+                                <td>${a.student.name}</td>
+                                <td>
+                                    <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
+                                </td>
+                        <form action="attend" method="post">
                             <td>
                                 <input type="radio" name="status" value=""/> Absent <br>
                                 <input type="radio" name="status" value=""/> Present
@@ -71,135 +74,11 @@
                             <td>
                                 <input type="text" name="comment" value=""/>
                             </td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-p">Present</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-p">Present</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-p">Present</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-p">Present</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-a">Absent</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-a">Absent</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-p">Present</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-p">Present</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>IOT1601</td>
-                            <td>HE151027</td>
-                            <td>Tran Van Tuan</td>
-                            <td>
-                                <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
-                            </td>
-                            <td><span class="status-p">Present</span></td>
-                            <td></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
-                        </tr>
+                        </form>
+                        <td><a href="#">sonnt5</a></td>
+                        <td>1/19/2022 8:45 00 AM</td>
+                        </tr> 
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

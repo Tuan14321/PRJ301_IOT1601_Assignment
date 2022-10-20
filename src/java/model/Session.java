@@ -19,6 +19,7 @@ public class Session {
     private Lecturer lecturer;
     private TimeSlot slot;
     private ArrayList<Attendance> atts = new ArrayList<>();
+    private ArrayList<Group> groups = new ArrayList<>();
     private Date date;
     private int index;
     private boolean attanded;

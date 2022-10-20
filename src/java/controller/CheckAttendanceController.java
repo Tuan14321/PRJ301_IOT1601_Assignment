@@ -4,12 +4,14 @@
  */
 package controller;
 
+import dal.SessionDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Session;
 
 /**
  *
@@ -69,7 +71,11 @@ public class CheckAttendanceController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         int sesid = Integer.parseInt(request.getParameter("id"));
+         SessionDAO sesDb = new SessionDAO();
+         Session ses = sesDb.get(sesid);
+         request.setAttribute("ses", ses);
+         request.getRequestDispatcher("attendance.jsp").forward(request, response);
     }
 
     /**
