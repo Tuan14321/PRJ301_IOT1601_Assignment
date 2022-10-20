@@ -64,8 +64,13 @@
                             <td>
                                 <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
                             </td>
-                            <td><span class="status-a">Absent</span></td>
-                            <td></td>
+                            <td>
+                                <input type="radio" name="status" value=""/> Absent <br>
+                                <input type="radio" name="status" value=""/> Present
+                            </td>
+                            <td>
+                                <input type="text" name="comment" value=""/>
+                            </td>
                             <td><a href="#">sonnt5</a></td>
                             <td>1/19/2022 8:45 00 AM</td>
                         </tr>
