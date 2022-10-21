@@ -33,7 +33,55 @@ public class SessionDAO extends DBContext<Session> {
 
     @Override
     public void Update(Session model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         try {
+            conn.setAutoCommit(false);
+            String sql = "UPDATE [Session] SET attanded = 1 WHERE sesid = ?";
+            PreparedStatement stm = conn.prepareStatement(sql);
+            stm.setInt(1, model.getId());
+            stm.executeUpdate();
+
+            //remove old attandances
+            sql = "DELETE Attandance WHERE sesid = ?";
+            PreparedStatement stm_delete = conn.prepareStatement(sql);
+            stm_delete.setInt(1, model.getId());
+            stm_delete.executeUpdate();
+
+            //insert new attandances
+            for (Attendance att : model.getAtts()) {
+                sql = "INSERT INTO [Attandance]\n"
+                        + "           ([sesid]\n"
+                        + "           ,[stdid]\n"
+                        + "           ,[present]\n"
+                        + "           ,[description]\n"
+                        + "           ,[record_time])\n"
+                        + "     VALUES\n"
+                        + "           (?\n"
+                        + "           ,?\n"
+                        + "           ,?\n"
+                        + "           ,?\n"
+                        + "           ,GETDATE())";
+                PreparedStatement stm_insert = conn.prepareStatement(sql);
+                stm_insert.setInt(1, model.getId());
+                stm_insert.setInt(2, att.getStudent().getId());
+                stm_insert.setBoolean(3, att.isPresent());
+                stm_insert.setString(4, att.getDescription());
+                stm_insert.executeUpdate();
+            }
+            conn.commit();
+        } catch (SQLException ex) {
+            try {
+                conn.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(SessionDAO.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+            Logger.getLogger(SessionDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                conn.setAutoCommit(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(SessionDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     @Override
@@ -111,10 +159,6 @@ public class SessionDAO extends DBContext<Session> {
                 a.setPresent(rs.getBoolean("present"));
                 a.setDescription(rs.getString("description"));
                 ses.getAtts().add(a);
-                
-                Group g = new Group();
-                g.setId(rs.getInt("gid"));
-                g.setName(rs.getString("gname"));
             }
             return ses;
         } catch (SQLException ex) {

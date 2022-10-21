@@ -11,7 +11,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Attendance;
 import model.Session;
+import model.Student;
 
 /**
  *
@@ -36,7 +38,7 @@ public class CheckAttendanceController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CheckAttendanceController</title>");            
+            out.println("<title>Servlet CheckAttendanceController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet CheckAttendanceController at " + request.getContextPath() + "</h1>");
@@ -57,7 +59,12 @@ public class CheckAttendanceController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("attendance.jsp").forward(request, response);
+        // int sesid = Integer.parseInt(request.getParameter("id"));
+        int sesid = 2;
+        SessionDAO sesDb = new SessionDAO();
+        Session ses = sesDb.get(sesid);
+        request.setAttribute("ses", ses);
+        request.getRequestDispatcher("../view/lecturer/attendance.jsp").forward(request, response);
     }
 
     /**
@@ -71,11 +78,21 @@ public class CheckAttendanceController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         int sesid = Integer.parseInt(request.getParameter("id"));
-         SessionDAO sesDb = new SessionDAO();
-         Session ses = sesDb.get(sesid);
-         request.setAttribute("ses", ses);
-         request.getRequestDispatcher("attendance.jsp").forward(request, response);
+        Session ses = new Session();
+        ses.setId(Integer.parseInt(request.getParameter("sesid")));
+        String[] stdids = request.getParameterValues("stdid");
+        for (String stdid : stdids) {
+            Attendance a = new Attendance();
+            Student s = new Student();
+            a.setStudent(s);
+            a.setDescription(request.getParameter("description" + stdid));
+            a.setPresent(request.getParameter("present" + stdid).equals("present"));
+            s.setId(Integer.parseInt(stdid));
+            ses.getAtts().add(a);
+        }
+        SessionDAO db = new SessionDAO();
+        db.Update(ses);
+        response.sendRedirect("takeatt?id=" + ses.getId());
     }
 
     /**

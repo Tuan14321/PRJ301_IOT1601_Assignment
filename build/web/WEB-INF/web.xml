@@ -14,7 +14,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>TimeTableController</servlet-name>
-        <url-pattern>/timetable</url-pattern>
+        <url-pattern>/lecturer/timetable</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CourseController</servlet-name>
@@ -22,7 +22,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CheckAttendanceController</servlet-name>
-        <url-pattern>/attend</url-pattern>
+        <url-pattern>/lecturer/attend</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
