@@ -89,7 +89,7 @@
                         </c:forEach>
                         </tbody>
                 </table>
-                <input type="submit" value="save"/>
+                        <input class="btn-submit" type="submit" value="save"/>
                 </form>
 
                 <div class="footer">

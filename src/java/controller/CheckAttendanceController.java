@@ -92,7 +92,7 @@ public class CheckAttendanceController extends HttpServlet {
         }
         SessionDAO db = new SessionDAO();
         db.Update(ses);
-        response.sendRedirect("takeatt?id=" + ses.getId());
+        response.sendRedirect("lecturer/attend?id=" + ses.getId());
     }
 
     /**
