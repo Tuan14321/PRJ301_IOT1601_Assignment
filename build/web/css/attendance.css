@@ -20,17 +20,12 @@ a{
 }
 
 th{
-    background-color: rgb(107, 144, 218);
     text-transform: uppercase;
-    padding: 4px;
 }
 .container{
     margin: 20px 10%;
 }
-td{
-    width: 12%;
-    text-align: center;
-}
+
 .header{
     margin: 20px 0px;
     display: flex;
@@ -66,8 +61,4 @@ img{
 }
 .status-p{
     color: green;
-}
-.btn-submit{
-font-size: 50px;
-width: 100px;
 }

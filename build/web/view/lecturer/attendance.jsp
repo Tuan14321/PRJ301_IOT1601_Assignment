@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Attendance</title>
         <link rel="stylesheet" href="../css/attendance.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
     <body>
         <div class="container">
@@ -25,7 +26,7 @@
                 <div class="left-header">
                     <a  href="#">Home</a> |
                     <a>View Schedule</a> |
-                    <a href="attend">Timetable</a> |
+                    <a href="../lecturer/timetable">Timetable</a> |
                     <a href="course">Course</a> |
                     <a href="attend">Attend</a>
 
@@ -47,19 +48,19 @@
                 Date: ${requestScope.ses.date} - ${requestScope.ses.slot.description}<br/>
                 Attended: <span style="color: red;"> ${requestScope.ses.attanded?"Yes":"No"} </span>
                 <span>Attendance for PRJ301 with Lecturer SonNT5 at Slot 1 on Wednesday 19/01/2022. Spring2022, in Room BE-301 at FU-HL</span>
-                <table>
+                <table class="table ">
                     <form action="attend" method="post">
                         <input type="hidden" name="sesid" value="${param.id}"/>
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                                <th>Status</th>
-                                <th>Comment</th>
-                                <th>Taker</th>
-                                <th>Record Time</th>
+                                <th scope="col">No.</th>
+                                <th scope="col">Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Comment</th>
+                                <th scope="col">Taker</th>
+                                <th scope="col">Record Time</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,8 +77,8 @@
                                        <c:if test="${a.present}">
                                            checked="checked"
                                        </c:if>
-                                       name="status${a.student.id}" value="present" />
-                            <input type="radio"
+                                       name="status${a.student.id}" value="present" /><br>
+                                <input type="radio"
                                        <c:if test="${!a.present}">
                                            checked="checked"
                                        </c:if>
@@ -89,7 +90,7 @@
                         </c:forEach>
                         </tbody>
                 </table>
-                        <input class="btn-submit" type="submit" value="save"/>
+                <input class="btn btn-outline-primary" type="submit" value="save"/>
                 </form>
 
                 <div class="footer">
@@ -101,5 +102,7 @@
                     </span>
                 </div>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     </body>
 </html>

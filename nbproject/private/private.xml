@@ -5,8 +5,11 @@
         <group>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/web/view/lecturer/attendance.jsp</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/dal/SessionDAO.java</file>
+            <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/model/Account.java</file>
+            <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/controller/TimeTableController.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/model/Session.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/controller/CheckAttendanceController.java</file>
+            <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/dal/DBContext.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/web/css/attendance.css</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/web/WEB-INF/web.xml</file>
         </group>
