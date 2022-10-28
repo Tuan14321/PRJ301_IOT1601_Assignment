@@ -55,7 +55,7 @@ public class CourseController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("course.jsp").forward(request, response);
+       // request.getRequestDispatcher("course.jsp").forward(request, response);
     }
 
     /**

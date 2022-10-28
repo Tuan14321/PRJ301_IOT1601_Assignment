@@ -1,30 +1,22 @@
+package controller;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package controller;
 
-import dal.LecturerDAO;
-import dal.SessionDAO;
-import dal.TimeSlotDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.Date;
-import model.Lecturer;
-import model.Session;
-import model.TimeSlot;
-import util.DateTimeHelper;
 
 /**
  *
  * @author tuann
  */
-public class TimeTableController extends HttpServlet {
+public class StatisController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,10 +35,10 @@ public class TimeTableController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet TimeTableController</title>");            
+            out.println("<title>Servlet StatisController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet TimeTableController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet StatisController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -64,7 +56,7 @@ public class TimeTableController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("../view/lecturer/timetable.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
