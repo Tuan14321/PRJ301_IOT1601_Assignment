@@ -64,6 +64,41 @@ public class TimeTableController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+              int lid = Integer.parseInt(request.getParameter("lid"));
+        String raw_from = request.getParameter("from");
+        String raw_to = request.getParameter("to");
+        java.sql.Date from = null;
+        java.sql.Date to = null;
+        if(raw_from ==null || raw_from.length() ==0)
+        {
+            Date today = new Date();
+            int todayOfWeek = DateTimeHelper.getDayofWeek(today);
+            Date e_from = DateTimeHelper.addDays(today, 2 - todayOfWeek);
+            Date e_to = DateTimeHelper.addDays(today, 8-todayOfWeek);
+            from = DateTimeHelper.toDateSql(e_from);
+            to = DateTimeHelper.toDateSql(e_to);
+        }
+        else
+        {
+            from = java.sql.Date.valueOf(raw_from);
+            to = java.sql.Date.valueOf(raw_to);
+        }
+        
+        request.setAttribute("from", from);
+        request.setAttribute("to", to);
+        request.setAttribute("dates", DateTimeHelper.getDateList(from, to));
+        
+        TimeSlotDAO slotDB = new TimeSlotDAO();
+        ArrayList<Object> slots = slotDB.list();
+        request.setAttribute("slots", slots);
+        
+        SessionDAO sesDB = new SessionDAO();
+        ArrayList<Session> sessions = sesDB.filter(lid, from, to);
+        request.setAttribute("sessions", sessions);
+        
+        LecturerDAO lecDB = new LecturerDAO();
+        Lecturer lecturer = (Lecturer) lecDB.get(lid);
+        request.setAttribute("lecturer", lecturer);
         request.getRequestDispatcher("../view/lecturer/timetable.jsp").forward(request, response);
     }
 

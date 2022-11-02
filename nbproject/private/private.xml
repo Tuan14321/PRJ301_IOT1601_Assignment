@@ -6,12 +6,14 @@
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/dal/SessionDAO.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/controller/TimeTableController.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/dal/LecturerDAO.java</file>
+            <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/controller/StatisController.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/model/Session.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/controller/CheckAttendanceController.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/web/view/lecturer/timetable.jsp</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/web/WEB-INF/web.xml</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/web/view/lecturer/attendance.jsp</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/model/Account.java</file>
+            <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/controller/CourseController.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/dal/TimeSlotDAO.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/util/DateTimeHelper.java</file>
             <file>file:/E:/FALL2022/PRJ301/Project/Attendance_Assignment/src/java/dal/DBContext.java</file>
