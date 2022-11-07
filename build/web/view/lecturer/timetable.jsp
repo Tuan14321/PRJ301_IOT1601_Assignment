@@ -14,7 +14,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-               Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
+        <jsp:include page="../../components/header.jsp"></jsp:include>
+
+            Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
         <form action="timetable" method="GET">
             <input type="hidden" name="lid" value="${param.lid}"/>
             From: <input type="date" name="from" value="${requestScope.from}"/>
@@ -45,12 +47,14 @@
                                         <img src="../img/female-icon.png" alt=""/>
                                     </c:if>
                                 </c:if>
-                                  
+
                             </c:forEach>
                         </td>
                     </c:forEach>
                 </tr>
             </c:forEach>
         </table>
+        <jsp:include page="../../components/footer.jsp"></jsp:include>
+
     </body>
 </html>

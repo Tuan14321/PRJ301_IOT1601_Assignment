@@ -11,6 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -75,7 +76,7 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         AccountDAO db = new AccountDAO();
-        AccountDAO account = db.get(username, password);
+        Account account = db.get(username, password);
         if (account != null) {
             request.getSession().setAttribute("account", account);
             response.getWriter().println("login successful!");

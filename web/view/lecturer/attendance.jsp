@@ -16,33 +16,11 @@
     </head>
     <body>
         <div class="container">
-            <div class="title">
-                <h1>
-                    <span>FPT University Academic Portal</span>
-                </h1>
-            </div >
+            <jsp:include page="../../components/header.jsp"></jsp:include>
 
-            <div class="header">
-                <div class="left-header">
-                    <a  href="#">Home</a> |
-                    <a>View Schedule</a> |
-                    <a href="../lecturer/timetable">Timetable</a> |
-                    <a href="course">Course</a> |
-                    <a href="attend">Attend</a>
-
-                </div>
-                <div class="right-header">
-                    <a href="#">${requestScope.ses.lecturer.name}</a> |
-                    <a href="#">logout</a> |
-                    <a href="attend"></a>
-
-                    <span class="campus">CAMPUS: FPTU-Hòa lạc</span>
-                </div>
-            </div>
-
-            <div class="list">
-                <h1>Single Activity Attendance</h1>
-                Take attendance for Group: ${requestScope.ses.group.name} <br/>
+                <div class="list">
+                    <h1>Single Activity Attendance</h1>
+                    Take attendance for Group: ${requestScope.ses.group.name} <br/>
                 Subject: ${requestScope.ses.group.subject.name} <br/>
                 Room: ${requestScope.ses.room.name} <br/>
                 Date: ${requestScope.ses.date} - ${requestScope.ses.slot.description}<br/>
@@ -90,19 +68,14 @@
                         </c:forEach>
                         </tbody>
                 </table>
-                <input class="btn btn-outline-primary" type="submit" value="save"/>
+                <input class="btn-Save btn btn-outline-primary" type="submit" value="save"/>
                 </form>
 
-                <div class="footer">
-                    <span>
-                        Mọi thắc mắc xin liên hệ:
-                    </span>
-                    <span>
-                        Phòng dịch vụ sinh viên Email: <a href="#">dichvusinhvien@fpt.edu.vn</a> Điện thoại: (024)7308.13.13
-                    </span>
-                </div>
+                <jsp:include page="../../components/footer.jsp"></jsp:include>
+
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     </body>
 </html>
