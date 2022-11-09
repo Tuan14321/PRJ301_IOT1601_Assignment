@@ -25,9 +25,8 @@
                 Room: ${requestScope.ses.room.name} <br/>
                 Date: ${requestScope.ses.date} - ${requestScope.ses.slot.description}<br/>
                 Attended: <span style="color: red;"> ${requestScope.ses.attanded?"Yes":"No"} </span>
-                <span>Attendance for PRJ301 with Lecturer SonNT5 at Slot 1 on Wednesday 19/01/2022. Spring2022, in Room BE-301 at FU-HL</span>
-                <table class="table ">
-                    <form action="attend" method="post">
+                <form action="attend" method="post">
+                    <table class="table ">
                         <input type="hidden" name="sesid" value="${param.id}"/>
                         <thead>
                             <tr>
@@ -42,10 +41,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${requestScope.ses.atts}" var="a" varStatus="loop">
-                                <tr>
-                                    <td>${loop.index + 1}</td>
-                                    <td>${a.student.id}</td>
+                            <c:if test="${requestScope.btn ne 0}">
+                                <c:forEach items="${requestScope.ses.atts}" var="a" varStatus="loop">
+                                    <tr>
+                                        <td>${loop.index + 1}</td>
+                                        <td>${a.student.id}</td>
+                                <input type="hidden" name="stdid" value="${a.student.id}"/>
+                                <td>${a.student.name}</td>
+                                <td>
+                                    <img src="https://st.quantrimang.com/photos/image/2017/04/08/anh-dai-dien-FB-200.jpg" alt="alt"/>
+                                </td>
+                                <td>${requestScope.ses.attanded?"Yes":"No"}</td>
+                                <td>${a.description}</td>
+                                <td>${requestScope.ses.lecturer.name}</td>
+                                <td>${a.record_time}</td>
+                                </tr> 
+                            </c:forEach>
+                        </c:if>
+                        <c:forEach items="${requestScope.ses.atts}" var="a" varStatus="loop">
+                            <tr>
+                                <td>${loop.index + 1}</td>
+                                <td>${a.student.id}</td>
                             <input type="hidden" name="stdid" value="${a.student.id}"/>
                             <td>${a.student.name}</td>
                             <td>
@@ -55,20 +71,20 @@
                                        <c:if test="${a.present}">
                                            checked="checked"
                                        </c:if>
-                                       name="status${a.student.id}" value="present" /><br>
+                                       name="status${a.student.id}" value="present" /> Present<br>
                                 <input type="radio"
                                        <c:if test="${!a.present}">
                                            checked="checked"
                                        </c:if>
-                                       name="status${a.student.id}" value="absent" /></td>
-                            <td><input type="text" name="comment{a.student.id}" value="${a.description}" /></td>
-                            <td><a href="#">sonnt5</a></td>
-                            <td>1/19/2022 8:45 00 AM</td>
+                                       name="status${a.student.id}" value="absent" /> Absent</td>
+                            <td><input type="text" name="comment${a.student.id}" value="${a.description}" /></td>
+                            <td><a href="#">${requestScope.ses.lecturer.name}</a></td>
+                            <td>${a.record_time}</td>
                             </tr> 
                         </c:forEach>
                         </tbody>
-                </table>
-                <input class="btn-Save btn btn-outline-primary" type="submit" value="save"/>
+                    </table>
+                    <input class="btn-Save btn btn-outline-primary" type="submit" value="save"/>
                 </form>
 
                 <jsp:include page="../../components/footer.jsp"></jsp:include>

@@ -60,10 +60,10 @@ public class CheckAttendanceController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int sesid = Integer.parseInt(request.getParameter("id"));
-        //int sesid = 2;
         SessionDAO sesDb = new SessionDAO();
         Session ses = sesDb.get(sesid);
         request.setAttribute("ses", ses);
+        request.setAttribute("btn", "edit");
         request.getRequestDispatcher("../view/lecturer/attendance.jsp").forward(request, response);
     }
 
@@ -78,21 +78,21 @@ public class CheckAttendanceController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Session ses = new Session();
+       Session ses = new Session();
         ses.setId(Integer.parseInt(request.getParameter("sesid")));
         String[] stdids = request.getParameterValues("stdid");
         for (String stdid : stdids) {
-            Attendance a = new Attendance();
+            Attendance a =new Attendance();
             Student s = new Student();
             a.setStudent(s);
-            a.setDescription(request.getParameter("description" + stdid));
-            a.setPresent(request.getParameter("present" + stdid).equals("present"));
+            a.setDescription(request.getParameter("comment"+stdid));
+            a.setPresent(request.getParameter("status"+stdid).equals("present"));
             s.setId(Integer.parseInt(stdid));
             ses.getAtts().add(a);
         }
         SessionDAO db = new SessionDAO();
         db.Update(ses);
-        response.sendRedirect("lecturer/attend?id=" + ses.getId());
+        response.sendRedirect("attend?id="+ses.getId());
     }
 
     /**

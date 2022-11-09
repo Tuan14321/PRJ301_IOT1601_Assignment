@@ -24,6 +24,15 @@ public class Session {
     private int index;
     private boolean attanded;
 
+    public ArrayList<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(ArrayList<Group> groups) {
+        this.groups = groups;
+    }
+    
+
     public Session() {
     }
 

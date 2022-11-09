@@ -27,7 +27,7 @@ import model.TimeSlot;
  */
 public class SessionDAO extends DBContext<Session> {
     
-     public ArrayList<Session> filter(int lid, Date from, Date to) {
+    public ArrayList<Session> filter(int lid, Date from, Date to) {
         ArrayList<Session> sessions = new ArrayList<>();
         try {
             String sql = "SELECT  \n"

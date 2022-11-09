@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tuann
@@ -12,6 +14,15 @@ public class TimeSlot {
 
     private int id;
     private String description;
+    private ArrayList<Session> sessions = new ArrayList<>();
+
+    public ArrayList<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
+    }
 
     public TimeSlot() {
     }

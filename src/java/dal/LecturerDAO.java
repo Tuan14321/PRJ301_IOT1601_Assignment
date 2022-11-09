@@ -16,26 +16,11 @@ import model.Lecturer;
  *
  * @author tuann
  */
-public class LecturerDAO extends DBContext<Object>{
+public class LecturerDAO extends DBContext<Lecturer> {
 
     @Override
-    public void Insert(Object model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void Update(Object model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void Delete(Object model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Object get(int id) {
-                try {
+    public Lecturer get(int id) {
+        try {
             String sql = "SELECT lid,lname FROM Lecturer WHERE lid = ?";
             PreparedStatement stm = conn.prepareStatement(sql);
             stm.setInt(1, id);
@@ -54,8 +39,23 @@ public class LecturerDAO extends DBContext<Object>{
     }
 
     @Override
-    public ArrayList<Object> list() {
+    public void Insert(Lecturer model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    @Override
+    public void Update(Lecturer model) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Delete(Lecturer model) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public ArrayList<Lecturer> list() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

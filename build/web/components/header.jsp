@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="../css/header.css"/>
     </head>
     <body>
         <div class="title">
@@ -25,11 +26,10 @@
                 <a href="../lecturer/timetable">Timetable</a> |
                 <a href="course">Course</a> |
                 <a href="attend">Attend</a>
-
             </div>
             <div class="right-header">
-                <a href="#">${requestScope.ses.lecturer.name}</a> |
-                <a href="logout">logout</a> |
+                <a href="#">${sessionScope.account.displayname}</a> |
+                <a href="../logout">logout</a> |
                 <a href="attend"></a>
 
                 <span class="campus">CAMPUS: FPTU-Hòa lạc</span>

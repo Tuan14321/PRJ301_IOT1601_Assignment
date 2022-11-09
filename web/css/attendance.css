@@ -6,53 +6,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : Oct 13, 2022, 1:45:12 AM
     Author     : tuann
 */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-html{
-    font-family: sans-serif;
-    font-weight: 100;
-}
-a{
-    text-decoration: none;
-}
-
-th{
-    text-transform: uppercase;
-}
-.container{
-    margin: 20px 10%;
-}
-
-.header{
-    margin: 20px 0px;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(245, 245, 245);
-    padding: 10px 0px;
-}
-.left-header{
-    margin-left: 20px;
-}
-.right-header{
-    margin-right: 30px;
-}
-.right-header a{
-    font-size: 10px;
-    background-color: rgb(113, 194, 118);
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
-}
-.right-header .campus{
-    font-size: 10px;
-    background-color: rgb(113, 194, 118);
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
-}
 img{
     width: 150px;
 }
@@ -63,5 +16,5 @@ img{
     color: green;
 }
 .btn-Save{
-    margin-left: 40%;
+    margin-left: 60%;
 }
